@@ -1,0 +1,22 @@
+server:
+  port: ${PORT}
+  servlet:
+    context-path: /liquibase-demo/
+
+spring:
+  liquibase:
+    change-log: classpath:db-changelog/liquibase-changeLog.yml
+  application:
+    name: ${APPLICATION_NAME}
+  datasource:
+    url: ${DATABASE_URL}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${DATABASE_USER}
+    password: ${DATABASE_PASSWORD}
+    hikari:
+      connection-timeout: 60000 # maximum number of milliseconds that a client will wait for a connection from connection pool
+      maximum-pool-size: 30 # maximum connection pool size
+      minimum-idle: 10 # minimum number of idle connections that is maintained by HikariCP in connection pool
+      idle-timeout: 30000 # maximum amount of time in milli seconds that a connection is allowed to sit idle in connection pool
+      max-lifetime: 30000 # maximum lifetime in milliseconds of a connection in pool after it is closed
+      auto-commit: true

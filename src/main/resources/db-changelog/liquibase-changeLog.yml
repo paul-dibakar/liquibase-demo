@@ -1,0 +1,29 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: 1.0 # incremental id
+      author: dibakar
+
+  - include:
+      file: Release1.0/001_ddl.sql
+      relativeToChangelogFile: true
+
+  - include:
+      file: Release1.0/001_dml.sql
+      relativeToChangelogFile: true
+
+  - changeSet:
+      id: 2.0 # incremental id
+      author: dibakar
+
+  - include:
+      file: Release2.0/001_ddl.sql
+      relativeToChangelogFile: true
+
+  - changeSet:
+      id: 3.0 # incremental id
+      author: dibakar
+
+  - include:
+      file: Release3.0/001_ddl.sql
+      relativeToChangelogFile: true
